@@ -4,8 +4,6 @@
 import 'dart:io';
 
 import 'package:assessment/common/async_bloc/async_error.dart';
-import 'package:assessment/common/forms/exceptions.dart';
-import 'package:assessment/common/network/network_client.dart';
 
 class ErrorMapper{
 
@@ -24,19 +22,6 @@ class ErrorMapper{
     }
     if (error is AsyncError) {
       return error;
-    }
-    if (error is ApiException) {
-      switch(error.statusCode){
-        case 400:
-          return AsyncError("Error in input. Please check your input.", code: error.statusCode);
-        case 500:
-          return AsyncError("Unknown server has occurred. Please try again or try later.", code: error.statusCode);
-        default:
-          return AsyncError("We're sorry, but something went wrong. Please contact customer support for assistance.", code: error.statusCode);
-      }
-    }
-    if (error is ValidationException){
-      return AsyncError("Invalid input. Please check your input.");
     }
     if(error is SocketException){
       return AsyncError("Unable to connect to the server. Please check your internet connection and try again.");

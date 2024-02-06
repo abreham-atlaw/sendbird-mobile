@@ -21,7 +21,7 @@ class ErrorScreen extends StatelessWidget {
               children: [
                 Image.asset("assets/images/error.png"),
                 const SizedBox(height: SpacingConfigs.spacing5,),
-                Heading2("Sorry, An Error has Occurred", textAlign: TextAlign.center,),
+                Heading2("Sorry, An Error has Occurred: ${state.initError.toString()} ${state.initError!.message}", textAlign: TextAlign.center,),
                 const SizedBox(height: SpacingConfigs.spacing3,),
                 BodyText(state.initError!.message, textAlign: TextAlign.center),
                 const SizedBox(

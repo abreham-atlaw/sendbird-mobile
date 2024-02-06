@@ -10,9 +10,7 @@ import 'package:assessment/features/core/application/events/chat_events.dart';
 import 'package:assessment/features/core/application/states/chat_state.dart';
 import 'package:assessment/features/core/presentation/widgets/message_input.dart';
 import 'package:assessment/features/core/presentation/widgets/messages_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChatScreen extends AsyncBlocScreen<ChatBloc, ChatState>{
